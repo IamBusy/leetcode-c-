@@ -5,6 +5,7 @@
 //  Created by william wei on 13/09/2017.
 //  Copyright © 2017 william wei. All rights reserved.
 //
+#include <stdio.h>
 
 struct ListNode {
     int val;
