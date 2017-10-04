@@ -11,6 +11,7 @@
 
 using namespace std;
 
+
 class Solution {
 public:
     int removeDuplicates(vector<int>& nums) {
@@ -22,21 +23,18 @@ public:
         }
         int last = 0;
         int idx = 1;
-        while (idx < nums.size()) {
+        int cnt = 1;
+        while (idx < len) {
             if(nums[idx] != nums[last]) {
+                cnt++;
                 if(idx - last > 1) {
-                    nums.erase(nums.begin()+last+1, nums.begin()+idx);
-                    last++;
-                    idx = last;
-                } else {
-                    last++;
+                    nums[last+1] = nums[idx];
                 }
+                last++;
             }
             idx ++;
         }
-        if(last < nums.size()-1 && nums[nums.size()-1] == nums[last]){
-            nums.erase(nums.begin()+last+1,nums.end());
-        }
-        return nums.size();
+        nums.erase(nums.begin()+cnt,nums.end());
+        return cnt;
     }
 };
