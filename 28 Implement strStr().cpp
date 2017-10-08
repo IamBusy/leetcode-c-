@@ -17,7 +17,7 @@ int *buildNext(string needle) {
     while (i<len-1) {
         if(t < 0 || needle[t] == needle[i]) {
             t++;i++;
-            next[i] = t;
+            next[i] = (needle[i] != needle[t])?t:next[t];
         } else {
             t = next[t];
         }
