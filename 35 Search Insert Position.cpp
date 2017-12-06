@@ -30,7 +30,7 @@ public:
         if(nums[mid] < target) {
             return mid + 1;
         } else {
-            return mid
+            return mid;
         }
     }
 };
