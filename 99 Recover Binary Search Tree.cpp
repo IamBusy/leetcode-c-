@@ -37,7 +37,7 @@ public:
             if (first == NULL && (pre == NULL || pre->val >= cur->val)) {
                 first = pre;
             }
-            
+            // find the last pair which the second value is smaller than the first one
             if (first != NULL && (pre->val >= cur->val)) {
                 second = cur;
             }
